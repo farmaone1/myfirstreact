@@ -4,7 +4,7 @@ import { Button, MenuContent, MenuItem, MenuRoot, MenuTrigger } from '@chakra-ui
 import { BsChevronDown } from 'react-icons/bs'
 
 interface Props {
-    onSelectPlatform: (platform: Platform) => void;
+    onSelectPlatform: (platform: Platform | any) => void;
     selectedPlatform: Platform | null;
 }
 
@@ -16,7 +16,7 @@ const PlatformSelector = ({onSelectPlatform, selectedPlatform}: Props) => {
   if (error) return null;
   return (
     <MenuRoot>
-        <MenuTrigger asChild marginX={'10px'}>
+        <MenuTrigger asChild marginX={'10px'} marginBottom={5}>
             <Button variant="outline" size="sm">
                <BsChevronDown /> {selectedPlatform?.name || 'Platforms'} 
             </Button>
