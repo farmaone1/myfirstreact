@@ -5,25 +5,8 @@ import './index.css'
 import App from './App.tsx'
 
 import { ColorModeProvider } from "@/components/ui/color-mode"
-import { ChakraProvider, createSystem, defaultConfig, defaultSystem, defineConfig, mergeConfigs } from "@chakra-ui/react"
-
-
-const theme = defineConfig({
-  theme: {
-    tokens: {
-      colors: {
-        gray: {
-          DEFAULT: { value: "#f9f9f9" },
-          100: { value: "#ededed" },
-        }
-      }
-    }
-  }
-}
-);
-
-const config = mergeConfigs(defaultConfig, theme);
-const system = createSystem(config);
+import { ChakraProvider} from "@chakra-ui/react"
+import system from './theme.ts'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
